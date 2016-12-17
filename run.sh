@@ -3,13 +3,13 @@
 set -m
 #CONFIG_FILE="/config/config.toml"
 # Name of .conf file AFTER envtpl is done modifying it.
-CONFIG_FILE="/config/influxdb.conf.tpl"
+CONFIG_FILE="/config/influxdb.conf"
 INFLUX_HOST="localhost"
 INFLUX_API_PORT="8086"
 API_URL="http://${INFLUX_HOST}:${INFLUX_API_PORT}"
 
 # Add Collectd support
-envtpl ${CONFIG_FILE}
+envtpl /config/influxdb.conf.tpl
 ### Orig before envtpl was:
 #if [ -n "${COLLECTD_DB}" ]; then
 #    echo "COLLECTD_DB: ${COLLECTD_DB}"
