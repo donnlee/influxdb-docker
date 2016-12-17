@@ -1,6 +1,11 @@
 FROM tutum/curl:trusty
 MAINTAINER Donn Lee <docker@pluza.com>
 
+RUN apt-get update -y \
+    && apt-get install -y \
+      curl unzip python-pip \
+    && pip install envtpl
+
 # Install InfluxDB
 ENV INFLUXDB_VERSION 0.12.2-1
 RUN curl -s -o /tmp/influxdb_latest_amd64.deb https://s3.amazonaws.com/influxdb/influxdb_${INFLUXDB_VERSION}_amd64.deb && \
@@ -9,7 +14,8 @@ RUN curl -s -o /tmp/influxdb_latest_amd64.deb https://s3.amazonaws.com/influxdb/
   rm -rf /var/lib/apt/lists/*
 
 ADD types.db /usr/share/collectd/types.db
-ADD config.toml /config/config.toml
+#ADD config.toml /config/config.toml
+ADD influxdb.conf.tpl /config/influxdb.conf.tpl
 ADD run.sh /run.sh
 RUN chmod +x /*.sh
 
