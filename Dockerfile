@@ -25,11 +25,11 @@ ENV SSL_CERT **None**
 
 # Admin server WebUI
 EXPOSE 8083
-
 # HTTP API
 EXPOSE 8086
+# Collectd port (udp)
+EXPOSE 25826/udp
 
-# Raft port (for clustering, don't expose publicly!)
 #EXPOSE 8090
 
 # Protobuf port (for clustering, don't expose publicly!)
