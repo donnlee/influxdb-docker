@@ -1,0 +1,15 @@
+version: '2'
+services:
+  grafana:
+    image: grafana/grafana
+    restart: always
+    ports:
+      - 4000:3000/tcp
+    volumes:
+      - /srv/grafana/:/var/lib/grafana
+    environment:
+      - FOO=bar
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "2"
