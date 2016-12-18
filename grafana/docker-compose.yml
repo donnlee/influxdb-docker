@@ -4,7 +4,7 @@ services:
     image: grafana/grafana
     restart: always
     ports:
-      - 4000:3000/tcp
+      - 3000:3000/tcp
     volumes:
       - /srv/grafana/:/var/lib/grafana
     environment:
