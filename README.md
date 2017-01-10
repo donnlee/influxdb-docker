@@ -1,3 +1,5 @@
+# Includes docker-compose.yml (config) for running official grafana container. See 'grafana' subdir.
+
 # Example environment variables for setup and run of influxdb container
 
 'docker run' or Rancher service environment vars:
