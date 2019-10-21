@@ -4,7 +4,7 @@ services:
     # There's no src Dockerfile for this collectd-snmp image.
     # See gDoc "collectd + snmp at home" for how it was built.
     # Versioning is managed in hub.docker.com/u/donn
-    image: donn/collectd-snmp-stretch-backports
+    image: donn/collectd-snmp-stretch-backports:fox_2019_04
     restart: always
     command: tail -f /dev/null
     volumes:
