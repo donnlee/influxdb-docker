@@ -5,6 +5,10 @@ services:
     restart: always
     ports:
       - 3000:3000/tcp
+    # https://grafana.com/docs/grafana/latest/installation/docker/#migrate-to-v73-or-later
+    # https://community.grafana.com/t/new-docker-install-with-persistent-storage-permission-problem/10896/5
+    # On b00 laptop-server, user=donn is id=1000.
+    user: '1000:1000'
     volumes:
       - /srv/grafana/:/var/lib/grafana
     environment:
