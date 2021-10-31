@@ -1,9 +1,9 @@
-FROM tutum/curl:trusty
+FROM phusion/baseimage:focal-1.1.0
 MAINTAINER Donn Lee <docker@pluza.com>
 
 RUN apt-get update -y \
     && apt-get install -y \
-      curl unzip python-pip \
+      curl unzip python3-pip \
     && pip install envtpl
 
 # Install InfluxDB
