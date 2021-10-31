@@ -7,8 +7,10 @@ services:
   collectd:
     # There's no src Dockerfile for this collectd-snmp image.
     # See gDoc "collectd + snmp at home" for how it was built.
-    # Versioning is managed in hub.docker.com/u/donn
-    image: donn/collectd-snmp-stretch-backports:fox_2019_10
+    # Container is commit'd and image pushed to private docker repo.
+    #
+    # 'fox' server died. moved influxdb, collectd, grafana to 'b00' laptop-server 2021/10/30
+    image: fran.xloha.com/collectd-snmp-stretch-backports:donn_b00_20211030
     deploy:
       restart_policy:
         # https://docs.docker.com/compose/compose-file/#restart_policy
